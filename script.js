@@ -1,28 +1,49 @@
-function toggleOffer(id) {
-  document
-    .querySelectorAll(".offer-box")
-    .forEach((box) => box.classList.remove("active"));
-  document.getElementById("offer-" + id).classList.add("active");
+const priceMap = { 1: 10, 2: 18, 3: 24 };
+const offerBoxes = document.querySelectorAll(".offer-box");
+const totalPriceEl = document.getElementById("total-price");
 
-  // Close all details first
-  document
-    .querySelectorAll(".extra-details")
-    .forEach((d) => (d.style.display = "none"));
+offerBoxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent document click
 
-  // Open the selected one
-  let selectedDetails = document.getElementById("details-" + id);
-  if (selectedDetails) selectedDetails.style.display = "block";
+    const id = box.dataset.id;
 
-  // Update price
-  updateTotal(id);
-}
+    // Close all boxes first
+    offerBoxes.forEach((b) => {
+      b.classList.remove("active");
+      const d = b.querySelector(".extra-details");
+      if (d) d.style.display = "none";
 
-function updateTotal(id) {
-  let price = {
-    1: 10,
-    2: 18,
-    3: 24
-  };
+      // Deselect radio
+      const radio = b.querySelector('input[type="radio"]');
+      if (radio) radio.checked = false;
+    });
 
-  document.getElementById("total-price").innerText = `$${price[id]}.00 USD`;
-}
+    // Open clicked box
+    box.classList.add("active");
+    const details = document.getElementById(`details-${id}`);
+    if (details) details.style.display = "block";
+
+    // Select radio of clicked box
+    const radio = box.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;
+
+    // Update total price
+    totalPriceEl.textContent = `$${priceMap[id]}.00 USD`;
+  });
+});
+
+// Close when clicking outside
+document.addEventListener("click", () => {
+  offerBoxes.forEach((b) => {
+    b.classList.remove("active");
+    const d = b.querySelector(".extra-details");
+    if (d) d.style.display = "none";
+
+    // Deselect radio
+    const radio = b.querySelector('input[type="radio"]');
+    if (radio) radio.checked = false;
+  });
+
+  totalPriceEl.textContent = "$0.00 USD"; // reset price
+});
