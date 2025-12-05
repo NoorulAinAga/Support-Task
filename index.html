@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOGO Offer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Heading -->
+        <h1 class="title">YAY! It’s BOGO</h1>
+
+        <!-- OFFER BOX - 1 UNIT -->
+        <div class="offer-box" id="offer-1" onclick="toggleOffer(1)">
+
+            <label class="offer-content">
+                <div class="offer-left">
+                    <div> <input type="radio" name="offer" id="r1" />
+                        <span class="unit-label">1 Unit</span>
+                        <span class="badge">10% Off</span>
+                    </div>
+                    <div> <small class="sub-text">Standard Price</small></div>
+
+
+                </div>
+
+                <div class="offer-right">
+                    <div class="price">$10.00 USD</div>
+                    <div class="old-price">$24.00 USD</div>
+                </div>
+            </label>
+
+            <!-- Extra Details -->
+            <div class="extra-details" id="details-1">
+                <div class="sizeColor">
+                    <span>Size</span>
+                    <span>Colour</span>
+                </div>
+
+                <div class="row">
+                    <span>#1</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <select>
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER BOX - 2 UNIT -->
+        <div class="offer-box" id="offer-2" onclick="toggleOffer(2)">
+            <div class="popular-tag">MOST POPULAR</div>
+
+            <label class="offer-content">
+                <div class="offer-left">
+                    <div>
+                        <input type="radio" name="offer" id="r2" />
+                        <span class="unit-label">2 Unit</span>
+                        <span class="badge">20% Off</span>
+                    </div>
+
+
+                </div>
+
+                <div class="offer-right">
+                    <div class="price">$18.00 USD</div>
+                    <div class="old-price">$24.00 USD</div>
+                </div>
+            </label>
+
+            <div class="extra-details" id="details-2">
+                <div class="sizeColor">
+                    <span>Size</span>
+                    <span>Colour</span>
+                </div>
+
+                <div class="row">
+                    <span>#1</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <select>
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <span>#2</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <select>
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER BOX - 3 UNIT -->
+        <div class="offer-box" id="offer-3" onclick="toggleOffer(3)">
+            <label class="offer-content">
+                <div class="offer-left">
+                    <div>
+                        <input type="radio" name="offer" id="r3" />
+                        <span class="unit-label">3 Unit</span>
+                        <span class="badge">30% Off</span>
+                    </div>
+
+                </div>
+
+                <div class="offer-right">
+                    <div class="price">$24.00 USD</div>
+                    <div class="old-price">$24.00 USD</div>
+                </div>
+            </label>
+
+            <div class="extra-details" id="details-3">
+                <div class="sizeColor">
+                    <span>Size</span>
+                    <span>Colour</span>
+                </div>
+
+                <div class="row">
+                    <span>#1</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <select>
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <span>#2</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <select>
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <span>#3</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                    <select>
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRICE SUMMARY -->
+        <div class="price_items">
+            <div class="delivery">Free Delivery</div>
+            <div class="total">Total : <span id="total-price">$0.00 USD</span></div>
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="add-btn">+ Add to Cart</button>
+        <p class="bottomNote">@ Powered by Pumper</p>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
